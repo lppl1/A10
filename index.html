@@ -7,6 +7,11 @@
     <body>
         <h1>Cookies Demo</h1>
         <p id="message"></p>
+        <button onclick="
+            document.cookie = 'username=; max-age=0';
+            document.cookie = 'username=; max-age=0; path=/';
+            location.reload();
+        ">Reset cookie</button>
 
         <script>
             if (document.cookie.includes("username=")){
