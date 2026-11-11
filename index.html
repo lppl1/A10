@@ -11,12 +11,14 @@
         <script>
             if (document.cookie.includes("username=")){
                 //the cookie exists and is shown
-                let name = document.cookie.split("username=")[1].split(".")[0];
+                let name = document.cookie.split("username=")[1].split(";")[0];
                 document.getElementById("message").textContent = "Welcome back, " + name + "!";
             } else {
                 let name = prompt("Please enter your name: ");
-                document.cookie = "username=" + name + "; max-age=86400";
-                document.getElementById("message").textContent = "Cookie saved. Refresh the page!";
+                if (name){
+                    document.cookie = "username=" + name + "; max-age=86400";
+                    document.getElementById("message").textContent = "Cookie saved. Refresh the page!";
+                }
             }
         </script>
 
