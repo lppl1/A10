@@ -6,5 +6,20 @@
     </head>
     <body>
         <h1>Cookies Demo</h1>
+        <p id="message"></p>
+
+        <script>
+            if (document.cookie.includes("username=")){
+                //the cookie exists and is shown
+                let name = document.cookie.split("username=")[1].split(".")[0];
+                document.getElementById("message").textContent = "Welcome back, " + name + "!";
+            } else {
+                
+            }
+        </script>
+
+        <footer>
+            <p>&copy; Luke Puchnowski, Due Date: 11/17/26</p>
+        </footer>
     </body>
 </html>
